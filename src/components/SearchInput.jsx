@@ -23,7 +23,7 @@ const SearchInput = () => {
         onChange={(e) => setQuery(e.target.value)}
       />
       <button
-        className={`py-2 px-4 bg-black text-white hover:bg-gray-800 cursor-pointer transition-all duration-200 rounded-md ${
+        className={`py-2 px-4 bg-black text-white dark:bg-gray-600 hover:bg-gray-800 cursor-pointer transition-all duration-200 rounded-md ${
           query ? "" : "opacity-50 "
         }`}
         onClick={handleSearch}

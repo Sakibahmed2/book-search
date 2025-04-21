@@ -49,7 +49,7 @@ const Books = () => {
 
   if (!searchQuery) {
     return (
-      <div className="text-center py-6 text-gray-500">
+      <div className="text-center py-6 text-gray-500 dark:text-gray-4">
         Please enter a search term to find books.
       </div>
     );
@@ -58,18 +58,22 @@ const Books = () => {
   if (loading) {
     return (
       <div className="flex justify-center py-12">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        <Loader2 className="h-8 w-8 animate-spin text-gray-600 dark:text-gray-300" />
       </div>
     );
   }
 
   if (error) {
-    return <div className="text-center py-12 text-destructive">{error}</div>;
+    return (
+      <div className="text-center py-12 text-red-500 dark:text-gray-4">
+        {error}
+      </div>
+    );
   }
 
   if (books.length === 0) {
     return (
-      <div className="text-center py-12 text-muted-foreground">
+      <div className="text-center py-12 text-gray-500 dark:text-gray-400">
         No books found for &quot;{searchQuery}&quot;. Try a different search
         term.
       </div>

@@ -1,5 +1,6 @@
 import Books from "@/components/Books";
 import SearchInput from "@/components/SearchInput";
+import ThemeSwitcher from "@/components/ui/ThemeSwitcher";
 
 export default function Home() {
   return (
@@ -8,11 +9,14 @@ export default function Home() {
         <h1 className="text-2xl md:text-4xl font-medium">
           Search for your favorite books
         </h1>
-        <p className="text-xs md:text-sm text-gray-600 mt-2">
+        <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-2">
           Welcome to our book searching app! You can search for books by title,
           author, or ISBN. Just enter your query in the search bar below and hit
           enter or click the search button.
         </p>
+        <div className=" flex justify-center items-center mt-2">
+          <ThemeSwitcher />
+        </div>
       </div>
       <SearchInput />
       <Books />

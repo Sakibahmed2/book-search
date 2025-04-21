@@ -9,7 +9,7 @@ const BookCard = ({ book }) => {
     : null;
 
   return (
-    <div className="flex border-2 border-gray-300 p-2 rounded-md hover:shadow-xl transition-shadow duration-200 ease-in-out ">
+    <div className="flex border-2 border-gray-300 dark:border-gray-600 p-2 rounded-md hover:shadow-xl transition-shadow duration-200 ease-in-out ">
       <div className="w-1/3 relative  flex items-center justify-center">
         {coverUrl ? (
           <Image
@@ -26,17 +26,15 @@ const BookCard = ({ book }) => {
         )}
       </div>
       <div className="w-2/3 p-4">
-        <h3 className="font-semibold text-lg line-clamp-2">{book.title}</h3>
-        {book.author_name && book.author_name.length > 0 && (
+        <h3 className="font-semibold text-lg line-clamp-2">{title}</h3>
+        {author_name && author_name.length > 0 && (
           <p className="text-sm text-gray-500 mt-1">
-            By {book.author_name.slice(0, 2).join(", ")}
-            {book.author_name.length > 2 ? " and others" : ""}
+            By {author_name.slice(0, 2).join(", ")}
+            {author_name.length > 2 ? " and others" : ""}
           </p>
         )}
-        {book.first_publish_year && (
-          <p className="text-sm mt-2">
-            First published: {book.first_publish_year}
-          </p>
+        {first_publish_year && (
+          <p className="text-sm mt-2">First published: {first_publish_year}</p>
         )}
       </div>
     </div>
